@@ -13,6 +13,7 @@ RUN set -ex \
   && cd /tmp \
   && curl https://repo.mysql.com/mysql-apt-config_0.8.17-1_all.deb -O \
   && DEBIAN_FRONTEND=noninteractive dpkg -i mysql-apt-config_0.8.17-1_all.deb \
+  && curl -s http://repo.mysql.com/RPM-GPG-KEY-mysql-2022 | apt-key add - \
   && apt-get update \
   && apt-get install -y mysql-client
 
